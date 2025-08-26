@@ -48,3 +48,6 @@
 .icon-social-twitter-circular:before {
   content: "\e901";
 }
+.icon-phone:before {
+  content: "\e942";
+}
