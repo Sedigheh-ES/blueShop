@@ -17,16 +17,16 @@ export default function Header() {
 
                 <div className='hidden md:flex gap-2.5'>                 
                     <span>Follow:</span>
-                    <ul>
-                        <IconBox icon={'icon-social-facebook'} link={'#'} />
-                        <IconBox icon={'icon-instagram'} link={'#'} />
-                        <IconBox icon={'icon-social-twitter-circular'} link={'#'} />
+                    <ul>                  
+                        <IconBox icon={'icon-social-facebook'} link={'#'} iconClassName={'px-2 py-1 bg-bg_light_green text-dark_header border border-bg_light_green rounded-full cursor-pointer ml-1'}/>
+                        <IconBox icon={'icon-instagram'} link={'#'}  iconClassName={'px-2 py-1 bg-bg_light_green text-dark_header border border-bg_light_green rounded-full cursor-pointer ml-1'}/>
+                        <IconBox icon={'icon-social-twitter-circular'} link={'#'}  iconClassName={'px-2 py-1 bg-bg_light_green text-dark_header border border-bg_light_green rounded-full cursor-pointer ml-1'}/>
                     </ul>              
                 </div>
 
-                <div> Winter is coming! 50% off for new year</div>
+                <div className='font-montserrat font-semibold text-6 text-center'> Winter is coming! 50% off for new year</div>
 
-                
+                <div className='flex gap-[19px]'>
                 <div className='hidden lg:flex'>
                     <IconBox icon={'icon-phone'} link={'#'} />
                     (+98) 253-1189
@@ -34,6 +34,7 @@ export default function Header() {
                 <div className='hidden lg:flex'>
                     <IconBox icon={'icon-envelop'} link={'#'} />
                     pigmentagency@gmail.com
+                </div>
                 </div>
             </div>
 
