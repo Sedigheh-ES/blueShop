@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Children, ReactNode } from 'react'
 
-export default function Section() {
+interface props{
+  children: ReactNode;
+}
+export default function Section({children}:props) {
   return (
-    <div>Section</div>
+      <div className='container mt-[10px]'>
+          {children}
+      </div>
   )
 }

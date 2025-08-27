@@ -1,4 +1,7 @@
 import Header from "@/components/Header/Header";
+import Banner from "@/components/bannerSlider/Banner";
+import SmallProduct from "@/components/product/simpleproduct/SmallProduct";
+import Section from "@/components/section/Section";
 
 
 
@@ -6,7 +9,11 @@ import Header from "@/components/Header/Header";
 export default function Home() {
   return (
     <>
-     <Header/>
+      <Header />
+      <Banner/>
+      <Section>
+        <SmallProduct/>
+      </Section>
     </>
     
   )
