@@ -1,1 +1,2 @@
-export * from './simpleproduct'
+export * from './simpleproduct';
+export * from './mansoryGallery';

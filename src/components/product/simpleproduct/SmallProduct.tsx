@@ -1,25 +1,96 @@
 import IconBox from '@/components/common/icon-box/IconBox'
 import React from 'react'
 import SingleProduct from './SingleProduct'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation } from 'swiper/modules'
+import { smallSlider } from '@/mock/simpleSmallSlider'
+import Image from 'next/image'
 
-export default function SmallProduct() {
+interface Props { 
+
+  nextEl?: string;
+  prevEl?:string
+}
+
+export default function SmallProduct({nextEl,prevEl}: Props) {
   return (
-    <div className='flex flex-row items-center justify-between mt-[60px]'>
-      <div className='flex flex-col w-[250px] gap-[22px]'> 
-        <h2 className='text-dark_header font-bold text-[20px]'>Discover Hot Deals for Your Home!</h2>
-        <div className='divide-solid'></div>
-        <p className='text-[#8C8C8C]  font-montserrat text-[12px] text-justify'>In Mansoury, daily you can find the highest discounts across all categories and products available on the website.</p>
-        <a href="#" className='border border-blue_main px-5 py-2 bg-blue_main rounded-md text-bg_light_green flex items-center gap-[56px] '>
-         <span> Show All Products</span>
-          <IconBox icon={'icon-angle-small-right'} />
-        </a>
-      </div>
-      
-      <div>
-        <SingleProduct/>
+   
+     <Swiper
+      spaceBetween={31}
+      slidesPerView={4}
+      autoplay={true}
+     
+      centeredSlides={true}
+      modules={[Autoplay, Navigation]}
+      navigation={{
+              
+              nextEl:nextEl,
+              prevEl:prevEl
+
+      }}
+
+      breakpoints={
+        {
+          375: {
+            slidesPerView: 1,
+            spaceBetween: 18
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 18
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 22
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 24
+          }
+        }
+      }
+
+    >
+  
+      <div className='relative flex flex-row gap-[38px]'>
         
-      </div>
+        {
+           
+                    smallSlider.map((item, index) => {
+                      return (
+                        
+                        <SwiperSlide key={index}>
+                          
+                          <div className='relative flex flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+                           
+                                    <div className='flex flex-col gap-2'>
+                                        <div><Image src={item.image} alt={'img'} width={240} height={240} /></div>
+                                        <div className='font-montserrat text-[12px] text-dark_header'>{item.title}</div>
+                                    </div>
+
+                                    <div className='flex flex-row justify-between items-center gap-[5px]'>
+                                        <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
+
+                                        <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'>
+                                            <IconBox icon={'icon-shopping-cart-white'} />
+                                        </div>
+                                    </div>
+                          </div>
+                           
+                        </SwiperSlide>
+                       
+                        );
+ 
+                    })
+
+        } 
+        <div>prev</div>
+            </div>
+
+        </Swiper>
+       
+  
     
-    </div>
+
   )
 }
