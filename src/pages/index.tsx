@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header";
 import Banner from "@/components/bannerSlider/Banner";
 import IconBox from "@/components/common/icon-box/IconBox";
-import  { MasonryGallery, MasonryItem } from "@/components/product/mansoryGallery/MansoryGallery";
+
 import MansoryImage from "@/components/product/mansoryGallery/MansoryImage";
 import SmallProduct from "@/components/product/simpleproduct/SmallProduct";
 import Section from "@/components/section/Section";
