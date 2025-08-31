@@ -5,7 +5,7 @@ import React from 'react'
 export default function MansoryImage() {
     return (
         <>
-            <div className='flex md:flex-row items-center justify-center gap-4'>
+            <div className='flex md:flex-row items-center justify-center gap-4 mt-[60px]'>
                 {
                     mansoryGalleryThree.map((item, index) => {
                         return (
