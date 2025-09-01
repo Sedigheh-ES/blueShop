@@ -5,7 +5,7 @@ import React from 'react'
 export default function MansoryImage() {
     return (
         <>
-            <div className='flex md:flex-row items-center justify-center gap-4 mt-[60px]'>
+            <div className='flex flex-col md:flex-row items-center justify-center gap-4 mt-[60px]'>
                 {
                     mansoryGalleryThree.map((item, index) => {
                         return (
@@ -26,7 +26,7 @@ export default function MansoryImage() {
 
             </div>
 
-            <div className='flex  md:flex-row gap-4 mt-[22px]'>
+            <div className='flex flex-col md:flex-row gap-4 mt-[22px]'>
                 {
                     mansoryGalleryTwo.map((item, index) => {
                         return (

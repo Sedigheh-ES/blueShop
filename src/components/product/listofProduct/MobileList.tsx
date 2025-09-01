@@ -1,18 +1,18 @@
 import IconBox from '@/components/common/icon-box/IconBox'
 import React from 'react'
-import SingleProduct from './SingleProduct'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
-import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
+import { productList } from '@/mock/productList'
+import ListOfProduct from './ListOfProduct'
 
 interface Props {
-
+  data: Array<any>;
   nextEl?: string;
   prevEl?: string
 }
 
-export default function SmallProduct({ nextEl, prevEl }: Props) {
+export default function MobileList({ nextEl, prevEl,data }: Props) {
   return (
 
     <Swiper
@@ -21,28 +21,17 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
       autoplay={true}
 
       modules={[Autoplay, Navigation]}
-      navigation={{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }}
-
+      navigation={true}
+  
       breakpoints={
         {
           375: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 18
           },
           768: {
-            slidesPerView: 1.5,
+            slidesPerView: 2,
             spaceBetween: 18
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 22
-          },
-          1280: {
-            slidesPerView: 3,
-            spaceBetween: 24
           }
         }
       }
@@ -54,11 +43,11 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
 
         {
 
-          smallSlider.map((item, index) => {
+          productList.map((item, index) => {
             return (
-
               <SwiperSlide key={index}>
-                <div className='hidden md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+
+                <div className='flex flex-col md:hidden p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
                   <div className=' flex flex-col items-center justify-center gap-2'>
                     <div className=' absolute bg-red_badge rounded-full py-2 px-1 left-1 top-1 text-bg_light_green text-[12px]'>40%</div>
                     <div className=' absolute bg-[#ffffff] rounded-full py-1 px-2 right-1 top-1 text-dark_header cursor-pointer'>
@@ -77,7 +66,6 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
                   </div>
                 </div>
               </SwiperSlide>
-
             );
 
           })
@@ -85,7 +73,9 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
         }
 
 
-      </div>
+          </div>
+          
+         
       
     </Swiper>
 
