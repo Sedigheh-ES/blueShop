@@ -5,7 +5,8 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-      <footer className='sm:grid sm:grid-cols-1 sm:gap-4 md:grid md:grid-cols-2 md:gap-4 lg:flex items-center justify-between p-[10px]'>
+      <footer className='sm:grid sm:grid-cols-1 sm:gap-4 md:grid md:grid-cols-2 md:git config http.postBuffer 524288000
+gap-4 lg:flex items-center justify-between p-[10px]'>
           <div className='flex flex-col gap-2 '> 
              <div className='font-montserrat font-bold text-[20px] align-top'>Stay connected</div>
            <div className=' text-[14px] text-dark_header/75 align-middle'>
