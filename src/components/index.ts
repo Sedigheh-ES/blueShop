@@ -3,4 +3,6 @@ export * from './common';
 export * from './bannerSlider';
 export * from './section';
 export * from './product';
-export * from './productbg'
+export * from './productbg';
+export * from './supportService';
+

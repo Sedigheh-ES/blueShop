@@ -25,11 +25,11 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
   
       breakpoints={
         {
-          375: {
-            slidesPerView: 2,
+          340: {
+            slidesPerView: 1,
             spaceBetween: 18
           },
-          768: {
+          744: {
             slidesPerView: 2,
             spaceBetween: 18
           }
@@ -47,10 +47,10 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
             return (
               <SwiperSlide key={index}>
 
-                <div className='flex flex-col md:hidden p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+                <div className='relative flex flex-col md:hidden p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
                   <div className=' flex flex-col items-center justify-center gap-2'>
-                    <div className=' absolute bg-red_badge rounded-full py-2 px-1 left-1 top-1 text-bg_light_green text-[12px]'>40%</div>
-                    <div className=' absolute bg-[#ffffff] rounded-full py-1 px-2 right-1 top-1 text-dark_header cursor-pointer'>
+                    <div className='absolute bg-red_badge rounded-full py-2 px-1 left-6 top-6 text-bg_light_green text-[12px]'>40%</div>
+                    <div className='absolute bg-[#ffffff] rounded-full py-1 px-2 right-6 top-6 text-dark_header cursor-pointer'>
                       <IconBox icon={'icon-heart'} />
                     </div>
                     <Image src={item.image} alt={'img'} width={240} height={240} className='flex items-center'/>

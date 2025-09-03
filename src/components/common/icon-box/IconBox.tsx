@@ -16,11 +16,11 @@ export default function IconBox({icon,size=24,link,title,iconClassName=''}:Props
         
         return (
             <Link href={link ?? '#'}  >             
-                <i className={`${icon} text-[${size}] ${iconClassName}`} ></i>
+                <i className={`${icon} text-[${size}px] ${iconClassName}`} ></i>
             </Link>
             
         );
     return (
-         <i className={`${icon} text-[${size}]`}></i>
+         <i className={`${icon} text-[${size}px]`}></i>
     )
 }

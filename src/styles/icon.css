@@ -31,6 +31,11 @@
   content: '\e927';
   color: rgb(253, 192, 64);
 }
+
+.icon-instagram:before {
+  content: '\e900';
+}
+
 .icon-fruit-1 .path2:before {
   content: '\e928';
   margin-left: -1em;

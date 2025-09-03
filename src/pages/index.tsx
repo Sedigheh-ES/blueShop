@@ -1,3 +1,5 @@
+import CopyRights from "@/components/Footer/CopyRights";
+import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Banner from "@/components/bannerSlider/Banner";
 import IconBox from "@/components/common/icon-box/IconBox";
@@ -8,7 +10,9 @@ import MansoryImage from "@/components/product/mansoryGallery/MansoryImage";
 import SmallProduct from "@/components/product/simpleproduct/SmallProduct";
 import Productbg from "@/components/productbg/Productbg";
 import Section from "@/components/section/Section";
+import ServiceCenter from "@/components/supportService/ServiceCenter";
 import { productList } from "@/mock/productList";
+
 
 
 
@@ -54,13 +58,22 @@ export default function Home() {
           </div>
           <ListOfProduct />
         </div>
-        <MobileList nextEl={'.swiper-nav-right2'} prevEl={'.swiper-nav-left2'} data={productList } />
+        <MobileList nextEl={'.swiper-nav-right2'} prevEl={'.swiper-nav-left2'} data={productList} />
       </Section>
 
-     <div className="mt-[60px]">
+      <div className="mt-[60px]">
         <Productbg/>
-  </div>
+      </div>
 
+      <Section>
+        <ServiceCenter/>
+      </Section>
+
+      <Section>
+        <Footer/>
+      </Section>
+
+      <CopyRights/>
     </>
 
   )
