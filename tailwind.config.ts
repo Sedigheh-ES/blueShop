@@ -50,7 +50,7 @@ const config: Config = {
     },
     container: {
       center: true,
-      padding: '1.5rem',
+      padding: '1rem',
       screens: {
         sm: '375px',
         md: '744px',

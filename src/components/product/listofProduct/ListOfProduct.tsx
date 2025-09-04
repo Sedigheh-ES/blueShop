@@ -16,7 +16,7 @@ export default function ListOfProduct() {
                   <IconBox icon={'icon-heart'} />
                 </div>
                 <Image src={item.image} alt={'img'} width={240} height={240} />
-                <div className='font-montserrat text-[12px] text-dark_header'>{item.title}</div>
+                <div className='font-montserrat text-[12px] text-dark_header tracking-wide'>{item.title}</div>
               </div>
 
               <div className='flex flex-row justify-between items-center gap-[5px]'>

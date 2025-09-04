@@ -53,7 +53,7 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
                     <div className='absolute bg-[#ffffff] rounded-full py-1 px-2 right-6 top-6 text-dark_header cursor-pointer'>
                       <IconBox icon={'icon-heart'} />
                     </div>
-                    <Image src={item.image} alt={'img'} width={240} height={240} className='flex items-center'/>
+                    <Image src={item.image} alt={'img'} width={300} height={300} className='flex items-center bg-contain' />
                     <div className='font-montserrat text-[12px] text-dark_header'>{item.title}</div>
                   </div>
 

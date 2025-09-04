@@ -13,7 +13,7 @@ export default function Header() {
     return (
         <>
 
-            <div className='w-full flex sm:flex-row-reverse lg:flex-row h-[58px] bg-blue_main text-bg_light_green items-center justify-between pl-[100px] pr-[98px] font-montserrat'>
+            <div className='w-full flex sm:flex-row-reverse lg:flex-row h-[58px] bg-blue_main text-bg_light_green items-center justify-between px-[100px] font-montserrat'>
 
                 <div className='hidden md:flex gap-2.5'>                 
                     <span>Follow:</span>
@@ -24,8 +24,7 @@ export default function Header() {
                     </ul>              
                 </div>
 
-                <div className='font-montserrat font-semibold text-6 text-center'> Winter is coming! 50% off for new year</div>
-
+                <div className='font-montserrat font-semibold text-[14px] lg:text-[16px] text-center'> Winter is coming! 50% off for new year</div>
                 <div className='flex gap-[19px]'>
                 <div className='hidden lg:flex'>
                     <IconBox icon={'icon-phone'} link={'#'} />
@@ -39,7 +38,7 @@ export default function Header() {
             </div>
 
             {/* Menu header */}
-            <div className='flex flex-col gap-8 md:flex-row  justify-between items-center pl-[100px] pr-[98px] pt-[30px] pb-[30px]'>
+            <div className='flex flex-col gap-8 md:flex-row  justify-between items-center sm:px-[10px] md:px-[100px] py-[30px]'>
                 <div><Logo/></div>
                 <div><Menu /></div>
                 <div className='flex gap-2 '>

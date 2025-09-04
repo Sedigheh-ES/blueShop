@@ -24,8 +24,10 @@ export default function Banner({}:props) {
                     return (
                      
                        <SwiperSlide key={index}>
-                            <div style={{ backgroundImage: `url(${item.image})` }} className='relative flex flex-row h-[596px] w-full bg-no-repeat bg-cover'>
-                                <h3 className='absolute top-[51px] left-[46%] translate-x-[-50%] translate-y-[-50%] font-lato font-bold text-[28px] text-bg_light_green'>{item.title }</h3>
+                            <div style={{ backgroundImage: `url(${item.image})` }} className='relative flex flex-row justify-center items-center h-[596px] w-full bg-no-repeat bg-cover'>
+                                    <div className='absolute top-[15%]  '>
+                                    <h3 className='font-lato font-bold text-[28px] text-bg_light_green tracking-wider px-4 text-center'>{item.title}</h3>
+                                    </div>
                             </div>
                         </SwiperSlide>
 
