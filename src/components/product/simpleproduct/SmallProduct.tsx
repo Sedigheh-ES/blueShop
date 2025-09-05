@@ -7,10 +7,10 @@ import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
 import { TRACE_OUTPUT_VERSION } from 'next/dist/shared/lib/constants'
 
-interface Props {
-
+interface Props { 
+ 
   nextEl?: string;
-  prevEl?: string
+  prevEl?:string
 }
 
 export default function SmallProduct({ nextEl, prevEl }: Props) {
@@ -26,14 +26,14 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
 
       modules={[Autoplay, Navigation]}
       navigation={{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl:nextEl,
+         prevEl:prevEl
       }}
 
       breakpoints={
         {
-          325: {
-            slidesPerView: 1,
+          375: {
+            slidesPerView: 1.5,
             spaceBetween: 18
           },
           768: {

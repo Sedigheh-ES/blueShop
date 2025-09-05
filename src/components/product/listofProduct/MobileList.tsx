@@ -7,12 +7,12 @@ import { productList } from '@/mock/productList'
 import ListOfProduct from './ListOfProduct'
 
 interface Props {
-  data: Array<any>;
+
   nextEl?: string;
   prevEl?: string
 }
 
-export default function MobileList({ nextEl, prevEl,data }: Props) {
+export default function MobileList({ nextEl, prevEl }: Props) {
   return (
 
     <Swiper
@@ -21,7 +21,10 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
       autoplay={true}
 
       modules={[Autoplay, Navigation]}
-      navigation={true}
+      navigation={{
+        nextEl:nextEl,
+         prevEl:prevEl
+      }}
   
       breakpoints={
         {
@@ -65,6 +68,7 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
                     </div>
                   </div>
                 </div>
+                
               </SwiperSlide>
             );
 

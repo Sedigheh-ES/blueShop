@@ -49,9 +49,12 @@ export default function Home() {
               <IconBox icon={'icon-angle-small-right'} />
             </a>
           </div>
-
+          <div className="md:flex items-center gap-3 hidden">
+            <i className="swiper-nav-left icon-angle-small-left cursor-pointer p-2  text-dark_header hover:text-white text-[40px]"></i>
+          </div>
           <div className="w-2/3 col-span-2">
-            <SmallProduct />
+            <SmallProduct nextEl={".swiper-nav-right"} prevEl={".swiper-nav-left"} />
+            
             </div>
         </div>
       </Section>
@@ -71,7 +74,13 @@ export default function Home() {
           </div>
           <ListOfProduct />
         </div>
-        <MobileList nextEl={'.swiper-nav-right2'} prevEl={'.swiper-nav-left2'} data={productList} />
+        <MobileList nextEl={".swiper-nav-right"} prevEl={".swiper-nav-left"} />
+        <div className="flex md:hidden items-center justify-center gap-3">
+            <i className="swiper-nav-left icon-angle-small-left cursor-pointer bg-blue_main p-3 rounded-md text-stroke_light_green  hover:text-white text-[24px]"></i>
+            <i className="swiper-nav-right icon-angle-small-right cursor-pointer  bg-blue_main p-3 rounded-md text-stroke_light_green  hover:text-white text-[24px]"></i>
+          </div>
+
+         
       </Section>
 
       <div className="mt-[60px]">
