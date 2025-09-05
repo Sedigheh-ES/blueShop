@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function ListOfProduct() {
   return (
-    <div className='grid grid-cols-5 gap-3'>
+    <div className='grid grid-cols-5 gap-4'>
       {
         productList.map((item, index) => {
           return (
