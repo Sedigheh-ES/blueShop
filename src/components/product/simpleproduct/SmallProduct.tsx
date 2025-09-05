@@ -62,7 +62,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
             return (
 
               <SwiperSlide key={index}>
-                <div className='hidden  md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+                <div className='flex flex-col md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
                   <div className=' flex flex-col items-center justify-center gap-2'>
                     <div className=' absolute bg-red_badge rounded-full py-2 px-1 left-1 top-1 text-bg_light_green text-[12px]'>40%</div>
                     <div className=' absolute bg-[#ffffff] rounded-full py-1 px-2 right-1 top-1 text-dark_header cursor-pointer'>

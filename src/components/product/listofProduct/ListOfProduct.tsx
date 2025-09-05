@@ -9,7 +9,7 @@ export default function ListOfProduct() {
       {
         productList.map((item, index) => {
           return (
-            <div className='relative hidden md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+            <div className='relative hidden md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md'>
               <div className='flex flex-col gap-2'>
                 <div className='absolute bg-red_badge rounded-full py-2 px-1   left-2.5 top-2.5 text-bg_light_green text-[12px]'>40%</div>
                 <div className='absolute bg-[#ffffff] rounded-full py-1 px-2  right-2.5 top-2.5 text-dark_header cursor-pointer'>

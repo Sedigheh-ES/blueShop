@@ -25,7 +25,7 @@ export default function MobileList({ nextEl, prevEl,data }: Props) {
   
       breakpoints={
         {
-          340: {
+          375: {
             slidesPerView: 1,
             spaceBetween: 18
           },
