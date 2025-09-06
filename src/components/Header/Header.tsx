@@ -24,7 +24,8 @@ export default function Header() {
                         </li>
                         <li> <Image src={'/assets/images/social media/twitter.png'} alt={'insta'} width={20} height={20} className='cursor-pointer' />
                         </li>
-                        <li> <Image src={'/assets/images/social media/facebook.png'} alt={'insta'} width={20} height={20} className='cursor-pointer' />
+                        <li>
+                            <Image src={'/assets/images/social media/facebook.png'} alt={'insta'} width={20} height={20} className='cursor-pointer' />
                         </li>
 
                     </ul>
@@ -33,11 +34,13 @@ export default function Header() {
                 <div className='font-montserrat font-semibold text-[14px] lg:text-[16px] text-center'> Winter is coming! 50% off for new year</div>
                 <div className='flex gap-[19px]'>
                     <div className='hidden lg:flex'>
-                        <IconBox icon={'icon-phone'} link={'#'} />
+             {/* <Image src={'/assets/images/phone.png'} alt={'insta'} width={15} height={15} className='cursor-pointer' /> */}
+
                         (+98) 253-1189
                     </div>
                     <div className='hidden lg:flex'>
-                        <IconBox icon={'icon-envelop'} link={'#'} />
+ {/* <Image src={'/assets/images/mail.png'} alt={'insta'} width={15} height={15} className='cursor-pointer' /> */}
+
                         pigmentagency@gmail.com
                     </div>
                 </div>
