@@ -34,7 +34,7 @@ export default function Logo() {
     </div>
 
         <div  onClick={menuBodyClickHandler} className={`${showMobileMenu? 'right-0 fixed overflow-y-scroll' :'-left-[100%] absolute' }  container bg-stroke_light_green transition-all w-3/5 rounded-tl-[24px] lg:rounded-[0px] lg:w-auto flex  top-0 bottom-0  lg:static flex-col lg:hidden justify-start lg:justify-between items-start pt-[16px] pl-[24px] lg:py-[13px] lg:items-center h-[100vh] bg-white lg:h-[70px] mobile-menu z-50 border-[1px] border-l-blue_main border-t-blue_main border-r-[#FFFFFF] border-b-[#FFFFFF]`}>
-     <nav className='flex  md:hidden'>
+     <nav className='flex ld:hidden'>
           <ul className='flex flex-col justify-center items-left gap-[10px] capitalize text-dark_header font-montserrat font-semibold text-[18px] tracking-wide'>
                <li>Home</li>
               <li>Products</li>
