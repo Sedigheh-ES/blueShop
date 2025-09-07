@@ -21,14 +21,19 @@
   }
   
     .container{
-        width: full;
+        width: 1249px;
         margin: 0 auto;
         padding: 10px 10px;
     }
     .menu-btn{
       color:#438DB8 !important;
     }
+
+    .w-200 {
+  width:calc(100% + 3rem);
 }
+}
+
 
  /* Swiper  */
  

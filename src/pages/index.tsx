@@ -22,9 +22,9 @@ export default function Home() {
 
       <Section>
         <div className='flex flex-col md:flex md:flex-row sm:gap-3  md:items-center justify-center gap-5 mt-[60px]'>
-          <div className="flex flex-col basis-60 w-[200px] md:w-1/3">
+          <div className="flex flex-col basis-60 w-[198px] mmd:[150px] md:w-1/3">
             <div className='flex flex-col gap-[22px] mr-6'>
-              <h2 className='text-dark_header font-bold text-[20px]'>Discover Hot Deals for Your Home!</h2>
+              <h2 className='text-dark_header font-bold text-[20px] tracking-wide'>Discover Hot Deals for Your Home!</h2>
               <div className="divide-y-8 divide-x-2  divide-blue_main divide-solid w-[60px]">
                 <div></div>
                 <div></div>
@@ -39,7 +39,7 @@ export default function Home() {
 
               </div>
             </div>
-            <a href="#" className='border border-blue_main px-5 py-2 bg-blue_main rounded-md text-bg_light_green flex items-center justify-between gap-[56px] mt-5'>
+            <a href="#" className='border border-blue_main w-200 px-5 py-2 bg-blue_main rounded-md text-bg_light_green flex items-center justify-between gap-[56px] mt-5'>
               <span className="text-[12px]">Show All Products</span>
               <IconBox icon={'icon-angle-small-right'} />
             </a>
@@ -47,7 +47,7 @@ export default function Home() {
           <div className="md:flex items-center justify-center gap-3 mb-8 hidden">
             <i className="swiper-nav-left icon-angle-small-left cursor-pointer p-2  text-dark_header hover:text-white text-[40px]"></i>
           </div>
-          <div className="w-[300px] md:w-[350px] lg:w-[600px]">
+          <div className="w-[300px] md:w-[350px] mmd:w-[500px] lg:w-[850px]">
 
             <SmallProduct nextEl={".swiper-nav-right"} prevEl={".swiper-nav-left"} />
 
@@ -61,7 +61,7 @@ export default function Home() {
       </Section>
 
 
-      <Section className="px-10">
+      <Section>
         <div className='flex flex-col sm:gap-3 items-center justify-center gap-4 mt-[60px]'>
           <div className=" text-[24px] md:text-head4 text-dark_header font-bold">Products You May Like</div>
           <div className="divide-y-8  divide-blue_main divide-solid w-[60px] mb-[34px]">
@@ -79,12 +79,16 @@ export default function Home() {
 
       </Section>
 
+      <Section>
+         <Productbg />
+         
 
+      </Section>
       
 
-      <div className="mt-[60px]">
+      {/* <div className="mt-[60px]">
         <Productbg />
-      </div>
+      </div> */}
 
 
       <Section>

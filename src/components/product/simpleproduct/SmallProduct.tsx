@@ -45,7 +45,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
             spaceBetween: 22
           },
           1280: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 24
           }
         }

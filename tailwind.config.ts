@@ -50,11 +50,12 @@ const config: Config = {
     },
     container: {
       center: true,
-      padding: '2.5rem',
+      padding: '1.5rem',
       screens: {
         sm: '375px',
         md: '744px',
-        lg: '1024px',
+        mmd:'1024px',
+        lg: '1249px',
         xl: '1440px',
         '2xl': '1632px'
       }
