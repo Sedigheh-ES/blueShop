@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from '../menu/Menu'
 import IconBox from '../icon-box/IconBox'
 
@@ -9,14 +9,26 @@ const menuButton = () => {
 export default function Logo() {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
-  const menuBtnClickHandler = (e) => {
+  const menuBtnClickHandler = (e:any) => {
     e.stopPropagation();
     setShowMobileMenu((prevState) => !prevState);
   };
 
-   const menuBodyClickHandler = (e) => {
+   const menuBodyClickHandler = (e:any) => {
      e.stopPropagation();
-  }
+   }
+  
+  useEffect(() => {
+    const clickHandler = () => {
+      setShowMobileMenu(false);
+    };
+    document.addEventListener("click", (clickHandler) => {
+      setShowMobileMenu(false);
+    });
+    return () => {
+      document.removeEventListener("click", clickHandler);
+    };
+  }, []);
   return (
     <>   
     <div className='flex items-center justify-center gap-4 menu-btn' onClick={menuBtnClickHandler} >
@@ -33,7 +45,7 @@ export default function Logo() {
 
     </div>
 
-        <div  onClick={menuBodyClickHandler} className={`${showMobileMenu? 'right-0 fixed overflow-y-scroll' :'-left-[100%] absolute' }  container bg-stroke_light_green transition-all w-3/5 rounded-tl-[24px] lg:rounded-[0px] lg:w-auto flex  top-0 bottom-0  lg:static flex-col lg:hidden justify-start lg:justify-between items-start pt-[16px] pl-[24px] lg:py-[13px] lg:items-center h-[100vh] bg-white lg:h-[70px] mobile-menu z-50 border-[1px] border-l-blue_main border-t-blue_main border-r-[#FFFFFF] border-b-[#FFFFFF]`}>
+        <div  onClick={menuBodyClickHandler} className={`${showMobileMenu? 'right-0 fixed overflow-y-scroll' :'-left-[100%] absolute' }  container bg-stroke_light_green transition-all duration-1000 ease-in-out w-3/5  md:w-2/5 rounded-tl-[24px] lg:rounded-[0px] lg:w-auto flex  top-0 bottom-0  lg:static flex-col lg:hidden justify-start lg:justify-between items-start pt-[16px] pl-[24px] lg:py-[13px] lg:items-center h-[100vh] bg-white lg:h-[70px] mobile-menu z-50 border-[1px] border-l-blue_main border-t-blue_main border-r-[#FFFFFF] border-b-[#FFFFFF]`}>
      <nav className='flex ld:hidden'>
           <ul className='flex flex-col justify-center items-left gap-[10px] capitalize text-dark_header font-montserrat font-semibold text-[18px] tracking-wide'>
                <li>Home</li>
