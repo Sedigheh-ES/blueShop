@@ -1,10 +1,12 @@
 export interface ProductType {
-    title: string;
-    image?: ImageType;
-    price: number;
-    sale_price:number
+  id: number;
+  title: string;
+  image?: ImageType;
+  price: number;
+  sale_price: number
 }
 export interface ImageType {
+  id: number;
   name: string
   alternativeText: any
   caption: any

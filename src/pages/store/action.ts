@@ -1,0 +1,13 @@
+export const addtoCardAction = (productID:number) => {
+    return {
+        type: 'cart/addToCart',
+        payload:productID
+    }
+}
+
+export const removeFromCardAction = (productID:number) => {
+    return {
+        type: 'cart/removeFromCart',
+        payload:productID
+    }
+}

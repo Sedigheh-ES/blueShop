@@ -5,11 +5,11 @@ import React from 'react'
 export default function MansoryImage() {
     return (
         <>
-            <div className='flex flex-col md:flex-row items-center justify-center gap-4 mt-[60px]'>
+            <div className='flex flex-col lg:flex-row items-center justify-center gap-4 mt-[60px]'>
                 {
                     mansoryGalleryThree.map((item, index) => {
                         return (
-                            <div className='relative flex flex-col gap-[22px]'>
+                            <div className='relative flex flex-col md:flex-col  gap-[22px]'>
                                 <Image src={item.image} alt={'image'} width={400} height={345} />
 
                                 <div className='absolute text-bg_light_green top-[30%] right-0 flex flex-col items-start justify-center bg-dark_charcoal/35 p-[14px] rounded-tl-md rounded-bl-md h-[42px] md:h-[93px]'>

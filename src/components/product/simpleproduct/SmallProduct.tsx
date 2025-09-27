@@ -5,29 +5,55 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
-import { TRACE_OUTPUT_VERSION } from 'next/dist/shared/lib/constants'
+import { ProductType } from '@/types/Product'
+import { useDispatch, useSelector } from 'react-redux'
+import Basket from '@/components/common/basket/Basket'
+import { addtoCardAction, removeFromCardAction } from '@/pages/store/action'
 
-interface Props { 
- 
+
+
+
+
+interface Props {
   nextEl?: string;
-  prevEl?:string
+  prevEl?: string;
+  
+}
+interface Products{
+product: ProductType
 }
 
-export default function SmallProduct({ nextEl, prevEl }: Props) {
+export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Products) {
+  
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cartItems);
+
+  
+  const addToCartHandler = (productId: Products) => {
+    dispatch(addtoCardAction(productId));
+   
+  }
+
+  const removeFromCartHandler = (productId: Products) => {
+    dispatch(removeFromCardAction(productId));
+   console.log("deletee");
+  }
+
+
   return (
 
     <Swiper
       spaceBetween={31}
       slidesPerView={4}
       autoplay={{
-                        delay: 3000,
-                        pauseOnMouseEnter: true,
-                    }}
+        delay: 3000,
+        pauseOnMouseEnter: true,
+      }}
 
       modules={[Autoplay, Navigation]}
       navigation={{
-        nextEl:nextEl,
-         prevEl:prevEl
+        nextEl: nextEl,
+        prevEl: prevEl
       }}
 
       breakpoints={
@@ -41,8 +67,8 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
             spaceBetween: 18
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 22
+            slidesPerView: 4,
+            spaceBetween: 18
           },
           1280: {
             slidesPerView: 4,
@@ -68,17 +94,31 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
                     <div className=' absolute bg-[#ffffff] rounded-full py-1 px-2 right-1 top-1 text-dark_header cursor-pointer'>
                       <IconBox icon={'icon-heart'} />
                     </div>
-                    <Image src={item.image} alt={'img'} width={240} height={240} className='flex items-center'/>
+                    <Image src={item.image} alt={'img'} width={240} height={240} className='flex items-center' />
                     <div className='font-montserrat text-[12px] text-dark_header tracking-wide'>{item.title}</div>
                   </div>
 
                   <div className='flex flex-row justify-between items-center gap-[5px]'>
                     <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
 
-                    <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'>
+                    {
+                      cartItems.includes(item.id) ?
+                        <div className='flex items-center text-white bg-red_badge border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => removeFromCartHandler(item.id)}>
+                      <IconBox icon={'icon-shopping-cart-white'} />
+                        </div>
+                        :
+                        <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => addToCartHandler(item.id)}>
                       <IconBox icon={'icon-shopping-cart-white'} />
                     </div>
+                    }
+
+                    {/* <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => addToCartHandler(item.id)}>
+                      <IconBox icon={'icon-shopping-cart-white'} />
+                    </div> */}
+                   
+                  
                   </div>
+
                 </div>
               </SwiperSlide>
 
@@ -90,7 +130,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
 
 
       </div>
-      
+
     </Swiper>
 
 

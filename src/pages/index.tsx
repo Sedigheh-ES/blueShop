@@ -22,7 +22,7 @@ export default function Home() {
 
       <Section>
         <div className='flex flex-col md:flex md:flex-row sm:gap-3  md:items-center justify-center gap-5 mt-[60px]'>
-          <div className="flex flex-col basis-60 w-[198px] mmd:[150px] md:w-1/3">
+          <div className="flex flex-col basis-60 w-[198px]  md:w-2/3">
             <div className='flex flex-col gap-[22px] mr-6'>
               <h2 className='text-dark_header font-bold text-[20px] tracking-wide'>Discover Hot Deals for Your Home!</h2>
               <div className="divide-y-8 divide-x-2  divide-blue_main divide-solid w-[60px]">
@@ -47,10 +47,8 @@ export default function Home() {
           <div className="md:flex items-center justify-center gap-3 mb-8 hidden">
             <i className="swiper-nav-left icon-angle-small-left cursor-pointer p-2  text-dark_header hover:text-white text-[40px]"></i>
           </div>
-          <div className="w-[300px] md:w-[350px] mmd:w-[500px] lg:w-[850px]">
-
+          <div className="w-[300px] md:w-[350px] lg:w-[850px]">
             <SmallProduct nextEl={".swiper-nav-right"} prevEl={".swiper-nav-left"} />
-
           </div>
         </div>
       </Section>
@@ -62,7 +60,7 @@ export default function Home() {
 
 
       <Section>
-        <div className='flex flex-col sm:gap-3 items-center justify-center gap-4 mt-[60px]'>
+        <div className='flex flex-col sm:gap-3 items-center justify-center gap-4 mt-[60px] py-[60px] px-[50px]'>
           <div className=" text-[24px] md:text-head4 text-dark_header font-bold">Products You May Like</div>
           <div className="divide-y-8  divide-blue_main divide-solid w-[60px] mb-[34px]">
             <div></div>
@@ -81,7 +79,7 @@ export default function Home() {
 
       <Section>
          <Productbg />
-         
+
 
       </Section>
       
