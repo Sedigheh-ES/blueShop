@@ -26,7 +26,7 @@ product: ProductType
 export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Products) {
   
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cartItems);
+  const cartItems = useSelector((state) => state.cartItems) as Array<number>;
 
   
   const addToCartHandler = (productId: Products) => {
@@ -36,7 +36,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Pro
 
   const removeFromCartHandler = (productId: Products) => {
     dispatch(removeFromCardAction(productId));
-   console.log("deletee");
+  
   }
 
 
@@ -112,9 +112,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Pro
                     </div>
                     }
 
-                    {/* <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => addToCartHandler(item.id)}>
-                      <IconBox icon={'icon-shopping-cart-white'} />
-                    </div> */}
+                    
                    
                   
                   </div>

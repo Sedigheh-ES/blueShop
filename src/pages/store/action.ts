@@ -11,3 +11,10 @@ export const removeFromCardAction = (productID:number) => {
         payload:productID
     }
 }
+
+export const emptyCart = () => {
+    return {
+        type: 'cart/emptyCart'
+       
+    }
+}

@@ -16,5 +16,13 @@ export const cartReducer = (state = initState, action:Actions) => {
             cartItems: state.cartItems.filter((item) => item != action.payload)
         }
     }
+
+    if (action.type === 'cart/emptyCart') {
+        return {
+            cartItems: []
+        }
+    }
+    
     return state;
 }
+
