@@ -1,7 +1,10 @@
+import { title } from "process"
+
 export const addtoCardAction = (productID:number) => {
     return {
         type: 'cart/addToCart',
-        payload:productID
+        payload: productID,
+        
     }
 }
 

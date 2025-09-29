@@ -1,14 +1,12 @@
 import IconBox from '@/components/common/icon-box/IconBox'
 import React from 'react'
-import SingleProduct from './SingleProduct'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
 import { ProductType } from '@/types/Product'
 import { useDispatch, useSelector } from 'react-redux'
-import Basket from '@/components/common/basket/Basket'
-import { addtoCardAction, removeFromCardAction } from '@/pages/store/action'
+import { basketSlice } from '@/pages/store/reducer'
 
 
 
@@ -26,16 +24,18 @@ product: ProductType
 export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Products) {
   
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cartItems) as Array<number>;
+  const cartItems = useSelector<Array<number>>((state) => state.cartItems);
 
   
   const addToCartHandler = (productId: Products) => {
-    dispatch(addtoCardAction(productId));
+    // dispatch(addtoCardAction(productId));
+    dispatch(basketSlice.actions.addToCart(productId));
    
   }
 
   const removeFromCartHandler = (productId: Products) => {
-    dispatch(removeFromCardAction(productId));
+    // dispatch(removeFromCardAction(productId));
+    dispatch(basketSlice.actions.removeFromCart(productId))
   
   }
 

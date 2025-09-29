@@ -1,6 +1,9 @@
 import { legacy_createStore as createStore } from 'redux';
-import { cartReducer } from './reducer';
+import { basketSlice } from './reducer';
+import { configureStore } from '@reduxjs/toolkit';
 
 
 
-export const store = createStore(cartReducer);
+export const store = configureStore({
+    reducer:basketSlice.reducer
+});

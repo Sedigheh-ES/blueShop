@@ -3,6 +3,7 @@ import IconBox from '../icon-box/IconBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { productList } from '@/mock/productList';
 import { emptyCart } from '@/pages/store/action';
+import { basketSlice } from '@/pages/store/reducer';
 
 
 export default function Basket() {
@@ -11,7 +12,8 @@ export default function Basket() {
   const cartItems = useSelector((state) => state.cartItems) as Array<number>;
 
   const emptyCartHandler = () => {
-    dispatch(emptyCart());  
+    // dispatch(emptyCart());  
+    dispatch(basketSlice.actions.emptyCart())
   }
 
 
