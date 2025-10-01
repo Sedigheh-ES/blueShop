@@ -29,7 +29,7 @@ export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Pro
   
   const addToCartHandler = (productId: Products) => {
     // dispatch(addtoCardAction(productId));
-    dispatch(basketSlice.actions.addToCart(productId));
+    dispatch(basketSlice.actions.addToCart(productId,1));
    
   }
 
