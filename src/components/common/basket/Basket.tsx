@@ -61,9 +61,7 @@ const basketBtnClickHandler = (e:any) => {
                 <div className='flex items-center justify-center w-full mb-2'>
                   <span className='border-b border-dark_header flex w-full p-4' key={item}>{item}</span>  
                   <Image
-                    src={item.image} alt={'img'} width={100} height={100} className='flex items-center' />
-
-                                     
+                    src={item.image} alt={'img'} width={50} height={50} className='flex items-center border' />                                 
                 </div>
       
                  
