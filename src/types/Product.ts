@@ -3,7 +3,8 @@ export interface ProductType {
   title: string;
   image?: ImageType;
   price: number;
-  sale_price: number
+  sale_price: number;
+  quantity:number
 }
 export interface ImageType {
   id: number;
