@@ -1,8 +1,10 @@
 export interface Product{
     id: number;
     title: string;
+    image: string;
+    link: string;
     price: number;
-    image:string
+    sale_price: number;
 }
 
 export interface CartItem{

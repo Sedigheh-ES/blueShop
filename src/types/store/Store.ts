@@ -1,3 +1,4 @@
 export interface reduxState{
-    cartItems:Array<number>
+    cartItems: Array<number>,
+    quantity:number
 }

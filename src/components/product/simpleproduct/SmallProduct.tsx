@@ -7,6 +7,8 @@ import Image from 'next/image'
 import { ProductType } from '@/types/Product'
 import { useDispatch, useSelector } from 'react-redux'
 import { basketSlice } from '@/pages/store/reducer'
+import { reduxState } from '@/types/store/Store'
+import { productList } from '@/mock/productList'
 
 
 
@@ -21,15 +23,15 @@ interface Products{
 product: ProductType
 }
 
-export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Products) {
+export default function SmallProduct({ nextEl, prevEl }: Props) {
   
   const dispatch = useDispatch();
-  const cartItems = useSelector<Array<number>>((state) => state.cartItems);
+  const cartItems = useSelector<reduxState>((state) => state.cartItems) as Array<number>;
 
   
   const addToCartHandler = (productId: Products) => {
     // dispatch(addtoCardAction(productId));
-    dispatch(basketSlice.actions.addToCart(productId,1));
+    dispatch(basketSlice.actions.addToCart(productId));
    
   }
 
@@ -102,12 +104,14 @@ export default function SmallProduct({ nextEl, prevEl }: Props, { product }: Pro
                     <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
 
                     {
-                      cartItems.includes(item.id) ?
-                        <div className='flex items-center text-white bg-red_badge border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => removeFromCartHandler(item.id)}>
+                   cartItems.includes(item.id) ?
+                        <div className='flex items-center text-white bg-red_badge border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'
+                          onClick={() => removeFromCartHandler(item.id)}>
                       <IconBox icon={'icon-shopping-cart-white'} />
                         </div>
                         :
-                        <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer' onClick={() => addToCartHandler(item.id)}>
+                        <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'
+                          onClick={() => addToCartHandler(item.id)}>
                       <IconBox icon={'icon-shopping-cart-white'} />
                     </div>
                     }

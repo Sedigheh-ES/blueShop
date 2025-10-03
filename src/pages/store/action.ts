@@ -1,9 +1,10 @@
 
 
-export const addtoCardAction = (productID:number,image:string) => {
+export const addtoCardAction = (productID:number) => {
     return {
         type: 'cart/addToCart',
-        payload: productID,image
+        payload: productID
+    
         
     }
 }
@@ -11,7 +12,8 @@ export const addtoCardAction = (productID:number,image:string) => {
 export const removeFromCardAction = (productID:number) => {
     return {
         type: 'cart/removeFromCart',
-        payload:productID
+        payload: productID,
+       
     }
 }
 
