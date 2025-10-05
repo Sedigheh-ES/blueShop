@@ -1,3 +1,4 @@
+import AddToCartBtn from '@/components/common/element/addToCartBtn';
 import IconBox from '@/components/common/icon-box/IconBox'
 import { smallSlider } from '@/mock/simpleSmallSlider';
 import { ProductType } from '@/types/Product';
@@ -7,10 +8,10 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 interface Props {
-    data: Array<ProductType>;
+    product:ProductType 
 }
 
-export default function SingleProduct() {
+export default function SingleProduct(props:Props) {
     return (
         
             <div className='flex flex-row gap-3'>
@@ -26,9 +27,10 @@ export default function SingleProduct() {
                                     <div className='flex flex-row justify-between items-center gap-[5px]'>
                                         <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
 
-                                        <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'>
+                                        {/* <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'>
                                             <IconBox icon={'icon-shopping-cart-white'} />
-                                        </div>
+                                        </div> */}
+                                    <AddToCartBtn product={props.product.id} />
                                     </div>
                                 </div>
                     

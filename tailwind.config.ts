@@ -7,35 +7,45 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  theme: {  
+  theme: {
     extend: {
+      keyframes: {
+        pingOnce: {
+          "50%": { transform: "scale(2)" },
+          100: { transform: "scale(1)" },
+        },
+      },
+      animation: {
+        pingOnce: "pingOnce 0.5s cubic-bezier(0, 0, 0.2, 1) ",
+      },
+  
       fontFamily: {
         lato: ['var(--font-lato)'],
-         montserrat: ["Montserrat", ...fontFamily.sans],
-     }
+        montserrat: ["Montserrat", ...fontFamily.sans],
+      }
     },
     fontSize: {
       head1: [
         '48px', {
           lineHeight: '150%',
-          fontWeight: 'bold',        
+          fontWeight: 'bold',
         }
       ],
       head2: [
         '36px',
         {
           lineHeight: '150%',
-          fontWeight: 'bold',    
+          fontWeight: 'bold',
         }
       ],
       head3: [
         '20px',
         {
           lineHeight: '150%',
-          fontWeight: 'bold',    
+          fontWeight: 'bold',
         }
-      ]
-
+      ],
+      
   
     },
     colors: {
@@ -61,6 +71,7 @@ const config: Config = {
     }
     
   },
+
   plugins: [],
-}
+  }
 export default config

@@ -1,32 +1,81 @@
-import { productList } from "@/mock/productList";
-import { CartItem, Product } from "@/types/store/Interface";
-import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit"
-import { reduxState } from "@/types/store/Store";
-import { ProductType } from "@/types/Product";
+import { ProductType, cartItem } from "@/types/Product";
+import { CartItem } from "@/types/store/Interface";
+import { PayloadAction, createSelector, createSlice, current } from "@reduxjs/toolkit";
+import { RootState } from "@reduxjs/toolkit/query";
 
 
-const initState:reduxState = {
+export interface CartState{
+cartItems:cartItem[]
+}
+
+const initialState: CartState = {
     cartItems:[],
-    quantity: 0
     
 }
 
-export const basketSlice = createSlice({
-   
-    name: "basket",
-    initialState: initState,
+export const cartSlice = createSlice({
+    name: "cart",
+    initialState,
     reducers: {
-        addToCart (state, action) {         
-            state.cartItems = [...state.cartItems, action.payload];          
+        addToCard: (state, action: PayloadAction<ProductType>) => {
+            const itemInCard = state.cartItems.find((el) => el.product?.id === action.payload?.id);
+            
+            if (itemInCard) itemInCard.qty++
+            else {
+                state.cartItems.push({
+                    product: action.payload,
+                    qty: 1
+                });
+            }
         },
 
-        removeFromCart(state, action){          
-            state.cartItems = state.cartItems.filter((item) => item != action.payload);
+        removeFromCard: (state, action: PayloadAction<ProductType>) => {
+            const itemInCard = state.cartItems.find((el) => el.product?.id === action.payload?.id);
+            if (itemInCard)
+                itemInCard.qty--
+            else {
+                state.cartItems = state.cartItems.filter((el) => el.product?.id !== action.payload?.id);
+            }
+            
         },
-        emptyCart(state) {
-            state.cartItems = [];
-        }
+
+        
     }
-    
 });
 
+const cartItems = (state: RootState) => state.cart.cartItems;
+
+export const productQtyInCartSelector = createSelector(
+    
+  [cartItems, (cartItems, productId: number) => productId],
+  (cartItems, productId) =>
+    cartItems.find((el) => el.product?.id === productId)?.qty
+);
+
+export const totalCartItemsSelector = createSelector(
+  [cartItems],
+  (cartItems) =>
+    cartItems.reduce(
+      (total: number, curr: CartItem) =>
+        (total += curr.qty),
+      0
+    )
+);
+
+export const totalPriceSelector =
+    createSelector(
+        [cartItems],
+        (cartItems) => cartItems.reducer((total: number, current: CartItem) => (total += current.product.price),0)
+    
+    );
+export const productQtySelector =
+    createSelector(
+        [cartItems, (productId: number) => productId],
+        (cartItems, productId) =>
+            cartItems.find((el) => el.product.id === productId)?.qty
+    );
+
+
+
+export const { addToCard, removeFromCard } = cartSlice.actions;
+export default cartSlice.reducer;

@@ -4,3 +4,4 @@ export * from './menu';
 export * from './auth';
 export * from './basket';
 export * from './search';
+export * from './element';

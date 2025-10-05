@@ -1,3 +1,4 @@
+"use client";
 import IconBox from '@/components/common/icon-box/IconBox'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -6,9 +7,11 @@ import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
 import { ProductType } from '@/types/Product'
 import { useDispatch, useSelector } from 'react-redux'
-import { basketSlice } from '@/pages/store/reducer'
+import { basketSlice } from '@/pages/store/reducer-bk'
 import { reduxState } from '@/types/store/Store'
 import { productList } from '@/mock/productList'
+import AddToCartBtn from '@/components/common/element/addToCartBtn'
+import QtyBtn from '@/components/common/element/QtyBtn';
 
 
 
@@ -17,13 +20,14 @@ import { productList } from '@/mock/productList'
 interface Props {
   nextEl?: string;
   prevEl?: string;
+  product: ProductType;
   
 }
 interface Products{
 product: ProductType
 }
 
-export default function SmallProduct({ nextEl, prevEl }: Props) {
+export default function SmallProduct({ nextEl, prevEl}: Props,props:Products) {
   
   const dispatch = useDispatch();
   const cartItems = useSelector<reduxState>((state) => state.cartItems) as Array<number>;
@@ -103,24 +107,29 @@ export default function SmallProduct({ nextEl, prevEl }: Props) {
                   <div className='flex flex-row justify-between items-center gap-[5px]'>
                     <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
 
-                    {
-                   cartItems.includes(item.id) ?
+                   
+
+                    {/* {
+                   
+                        cartItems.includes(item.id) ?
                         <div className='flex items-center text-white bg-red_badge border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'
                           onClick={() => removeFromCartHandler(item.id)}>
                       <IconBox icon={'icon-shopping-cart-white'} />
                         </div>
                         :
+                       
+                        
                         <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'
                           onClick={() => addToCartHandler(item.id)}>
                       <IconBox icon={'icon-shopping-cart-white'} />
                     </div>
-                    }
+                    } */}
 
                     
                    
                   
                   </div>
-
+                      <AddToCartBtn product={props.product}/>
                 </div>
               </SwiperSlide>
 

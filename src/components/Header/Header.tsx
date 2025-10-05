@@ -52,7 +52,7 @@ export default function Header() {
                 <div><Menu /></div>
                 <div className='flex gap-2 '>
                     <div><Login /></div>
-                    <div><Basket /></div>
+                    <div><Basket/></div>
                     <div><Search /></div>
                 </div>
             </div>

@@ -4,8 +4,14 @@ export interface ProductType {
   image?: ImageType;
   price: number;
   sale_price: number;
-  quantity:number
+ 
 }
+
+export interface cartItem{
+  product: ProductType;
+  qty: number;
+}
+
 export interface ImageType {
   id: number;
   name: string

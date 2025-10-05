@@ -1,4 +1,6 @@
+
 export const smallSlider = [
+
   {
        id:1,
         title: 'Bosch 300 Series SHEM63W55N',
