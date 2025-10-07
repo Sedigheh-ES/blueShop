@@ -1,9 +1,14 @@
+import AddToCartBtn from '@/components/common/element/addToCartBtn';
 import IconBox from '@/components/common/icon-box/IconBox';
 import { productList } from '@/mock/productList';
+import { ProductType } from '@/types/Product';
 import Image from 'next/image';
 import React from 'react'
 
-export default function ListOfProduct() {
+interface Products{
+product: ProductType
+}
+export default function ListOfProduct(props:Products) {
   return (
     <div className='grid grid-cols-5 gap-4'>
       {
@@ -22,6 +27,7 @@ export default function ListOfProduct() {
               <div className='flex flex-row justify-between items-center gap-[5px]'>
                 <div className='font-montserrat'>{item.price}<span className='font-montserrat text-[#BEBCBD] line-through text-[12px]'>{item.sale_price}</span></div>
 
+                 {/* <AddToCartBtn product={props.product}/> */}
                 <div className='flex items-center text-white bg-blue_main border border-blue_main rounded-md px-1.5 py-1.5 text-[15px] cursor-pointer'>
                   <IconBox icon={'icon-shopping-cart-white'} />
                 </div>

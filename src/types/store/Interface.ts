@@ -5,6 +5,7 @@ export interface Product{
     link: string;
     price: number;
     sale_price: number;
+    x:number
 }
 
 export interface CartItem{

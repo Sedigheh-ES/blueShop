@@ -7,11 +7,12 @@ import { smallSlider } from '@/mock/simpleSmallSlider'
 import Image from 'next/image'
 import { ProductType } from '@/types/Product'
 import { useDispatch, useSelector } from 'react-redux'
-import { basketSlice } from '@/pages/store/reducer-bk'
+import { basketSlice } from '@/pages/store/reducerBk'
 import { reduxState } from '@/types/store/Store'
 import { productList } from '@/mock/productList'
 import AddToCartBtn from '@/components/common/element/addToCartBtn'
 import QtyBtn from '@/components/common/element/QtyBtn';
+import { addToCard, removeFromCard } from '@/pages/store/reducer';
 
 
 
@@ -20,7 +21,7 @@ import QtyBtn from '@/components/common/element/QtyBtn';
 interface Props {
   nextEl?: string;
   prevEl?: string;
-  product: ProductType;
+ 
   
 }
 interface Products{
@@ -92,9 +93,13 @@ export default function SmallProduct({ nextEl, prevEl}: Props,props:Products) {
 
           smallSlider.map((item, index) => {
             return (
-
+    
               <SwiperSlide key={index}>
-                <div className='flex flex-col md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
+                <div>
+                  {item.price}
+                </div>
+                    
+              <div className='flex flex-col md:flex md:flex-col p-[7px] border border-bg_light_green shadow-md rounded-md gap-2'>
                   <div className=' flex flex-col items-center justify-center gap-2'>
                     <div className=' absolute bg-red_badge rounded-full py-2 px-1 left-1 top-1 text-bg_light_green text-[12px]'>40%</div>
                     <div className=' absolute bg-[#ffffff] rounded-full py-1 px-2 right-1 top-1 text-dark_header cursor-pointer'>
@@ -129,6 +134,8 @@ export default function SmallProduct({ nextEl, prevEl}: Props,props:Products) {
                    
                   
                   </div>
+                  
+                  
                       <AddToCartBtn product={props.product}/>
                 </div>
               </SwiperSlide>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import IconBox from '../icon-box/IconBox';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { basketSlice } from '@/pages/store/reducer-bk';
+import { basketSlice } from '@/pages/store/reducer';
 
 import { reduxState } from '@/types/store/Store';
 import { productList } from '@/mock/productList';
@@ -55,7 +55,7 @@ const basketBtnClickHandler = (e:any) => {
     <>
        
     <div className='relative border border-[#B4B4B4] rounded-md pl-3 pr-3 pt-[7px] pb-[7px] text-dark_header flex items-center justify-center' onClick={basketBtnClickHandler}>
-        <IconBox icon={'icon-shopping-cart'} link={'#'} />   
+        <IconBox icon={'icon-shopping-cart'} link={'/cart'} />   
         {
 
           !!totalCartItem &&

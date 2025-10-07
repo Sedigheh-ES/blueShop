@@ -49,7 +49,7 @@ export const productQtyInCartSelector = createSelector(
     
   [cartItems, (cartItems, productId: number) => productId],
   (cartItems, productId) =>
-    cartItems.find((el) => el.product?.id === productId)?.qty
+    cartItems.find((el:any) => el.product?.id === productId)?.qty
 );
 
 export const totalCartItemsSelector = createSelector(
@@ -72,7 +72,7 @@ export const productQtySelector =
     createSelector(
         [cartItems, (productId: number) => productId],
         (cartItems, productId) =>
-            cartItems.find((el) => el.product.id === productId)?.qty
+            cartItems.find((el:any) => el.product.id === productId)?.qty
     );
 
 
